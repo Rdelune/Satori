@@ -2,14 +2,21 @@ import {Component} from 'angular2/core';
 import {Config} from './config.service';
 import {Mood} from './mood';
 import {PlaylistComponent} from './playlist.component';
+import {inputForm} from './inputForm.component';
+
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/ts/app.component.html',
-    directives: [PlaylistComponent]
+    directives: [PlaylistComponent,inputForm]
 })
 
 export class AppComponent {
+
+    clickedButton(){
+        console.log('clicked');
+        
+    }
 
     moods: Array <Mood>;
         constructor(){

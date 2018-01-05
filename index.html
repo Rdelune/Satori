@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+    <link rel="stylesheet" type="text/css" href="/path/to/angular-slider/dist/rzslider.css"/>
+    <script src="/path/to/angularjs/angular.min.js"></script>
+    <script src="/path/to/angular-slider/dist/rzslider.min.js"></script>
     <!-- Load libraries (Note: IE required polyfills, in this exact order_ -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
@@ -23,14 +26,15 @@
                     format: 'register',
                     defaultExtension: 'js'
                 }
+                
             }
         });
         System.import('app/js/main').then(null, console.error.bind(console));
     </script>
 </head>
-<body>
+<body style='background-color: #74a9a6;'>
 <div class="container-fluid">
-    <my-app>Loading...</my-app>
+    <my-app>Loading Satori yeeeeow...</my-app>
 </div>
 </body>
 </html>

@@ -11,32 +11,35 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var PlaylistComponent;
+    var inputForm;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            PlaylistComponent = (function () {
-                function PlaylistComponent() {
+            inputForm = (function () {
+                function inputForm() {
                 }
-                PlaylistComponent.prototype.onSelect = function (mood) {
-                    console.log(JSON.stringify(mood));
+                //onSelect(mood:Mood){
+                //    console.log(JSON.stringify(mood))
+                //}
+                inputForm.prototype.submitEntry = function () {
+                    console.log('submitting entry');
                 };
-                PlaylistComponent.prototype.onClick = function () {
+                inputForm.prototype.switchView = function () {
                     console.log('clicked');
                 };
-                PlaylistComponent = __decorate([
+                inputForm = __decorate([
                     core_1.Component({
                         selector: 'inputForm',
                         templateUrl: 'app/ts/inputForm.component.html',
                     }), 
                     __metadata('design:paramtypes', [])
-                ], PlaylistComponent);
-                return PlaylistComponent;
+                ], inputForm);
+                return inputForm;
             }());
-            exports_1("PlaylistComponent", PlaylistComponent);
+            exports_1("inputForm", inputForm);
         }
     }
 });

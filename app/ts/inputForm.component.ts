@@ -5,15 +5,21 @@ import {Config} from './config.service';
 @Component({
     selector: 'inputForm',
     templateUrl: 'app/ts/inputForm.component.html',
+    
 })
 
-export class PlaylistComponent {
+export class inputForm {
     
-    onSelect(mood:Mood){
-        console.log(JSON.stringify(mood))
+    //onSelect(mood:Mood){
+    //    console.log(JSON.stringify(mood))
+    //}
+
+    submitEntry(){
+        console.log('submitting entry')
+
     }
 
-    onClick(){
+    switchView(){
         console.log('clicked')
 
     }
