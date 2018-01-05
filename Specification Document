@@ -1,0 +1,51 @@
+SatoriCalc
+
+- Gauges mood trends over time using info from fitBit, mood ledger
+- Object data will provide a scientically backed diagnosis on mood disorder or depressive disorder
+- Data can be entered via UI
+- Data is plotted on a graph (phase one)
+- Data will later be represented by images, where the change in variables will be shown by images (phase two)
+- Mood ledger variables will be decided upon using diagnostics from the diagnostic and statistical manual of mental disorders
+- More information will be used by the fitbit
+- Using the collected data a diagnosis can be made and strenghtened over time as the dataset grows
+
+    GRAPHS
+        - There will be a graph for each variable
+        - There will be a cumative mood graph
+
+    MENTAL LANDSCAPE
+        - variables can be added and represented in different ways, for example:
+            - tree height and general mood
+            - birds and external stressors
+
+    TIMELINE
+        - user can scrub through data using timeline bar
+        - graph/mental landscape will show accordingly
+
+    ACCUMULATING DATA
+
+        MOOD LEDGER
+
+        - DSM Diagnostic Criteria for Major Depressive Disorder and Depressive Episodes
+            DSM-IV Criteria for Major Depressive Disorder (MDD)
+                • Depressed mood or a loss of interest or pleasure in daily activities for more than two weeks.
+                • Mood represents a change from the person's baseline.
+                • Impaired function: social, occupational, educational.
+                • Specific symptoms, at least 5 of these 9, present nearly every day:
+                    1. Depressed mood or irritable most of the day, nearly every day, as indicated by either subjective report
+                        (e.g., feels sad or empty) or observation made by others (e.g., appears tearful).
+                    2. Decreased interest or pleasure in most activities, most of each day
+                    3. Significant weight change (5%) or change in appetite
+                    4. Change in sleep: Insomnia or hypersomnia
+                    5. Change in activity: Psychomotor agitation or retardation
+                    6. Fatigue or loss of energy
+                    7. Guilt/worthlessness: Feelings of worthlessness or excessive or inappropriate guilt
+                    8. Concentration: diminished ability to think or concentrate, or more indecisiveness
+                    9. Suicidality: Thoughts of death or suicide, or has suicide plan
+
+        HUAWEI BAND 2
+        
+        - 
+
+
+        
