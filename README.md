@@ -1,4 +1,4 @@
-![](http://i.imgur.com/CqXcsZ9.png)
+<!--![](http://i.imgur.com/CqXcsZ9.png)-->
 
 ### SATORI 
 

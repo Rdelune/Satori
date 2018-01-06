@@ -27,11 +27,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="#v of moods" (click)="onSelect(v)">   
-            <td>{{v.date}}</td>  
-            <td>{{v.generalMood}}</td> 
-            <td>{{v.apetite}}</td>
-            <td>{{v.sleep}}</td>
+        <tr (click)="clickedButton(v)" (delete)="onMediaItemDeleteEvenet(v)">   
+            <td>{{playlistItem.date}}</td>  
+            <td>2</td> 
+            <td>3</td>
+            <td>4</td>
                <!-- <tr>
                     <td>{{v.sleepQuality}}</td>
                     <td>{{v.sleepDifficulty}}</td>
@@ -39,18 +39,42 @@
                     <td>{{v.sleepParalysis}}</td>
                     <td>{{v.sleepNotes}}</td>
                 </tr>-->
-            <td>{{v.pleasureCapacity}}</td>
-            <td>{{v.energyLevel}}</td>
-            <td>{{v.motivation}}</td>
-            <td>{{v.selfWorth}}</td>
-            <td>{{v.concentration}}</td>
-            <td>{{v.extStressors}}</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
                <!-- <tr>
                     <td>{{v.dietaryNotes}}</td>
                     <td>{{v.stressEvents}}</td>
                     <td>{{v.percievedMoodInfluence}}</td>
                 </tr>-->
-            <td>{{v.additionalNotes}}</td>
+            <td>11</td>
         </tr>
     </tbody>
 </table>
+<!--
+<td>1</td>  
+<td>{{v.generalMood}}</td> 
+<td>{{v.apetite}}</td>
+<td>{{v.sleep}}</td>
+  <tr>
+        <td>{{v.sleepQuality}}</td>
+        <td>{{v.sleepDifficulty}}</td>
+        <td>{{v.sleepDreams}}</td>
+        <td>{{v.sleepParalysis}}</td>
+        <td>{{v.sleepNotes}}</td>
+    </tr>
+<td>{{v.pleasureCapacity}}</td>
+<td>{{v.energyLevel}}</td>
+<td>{{v.motivation}}</td>
+<td>{{v.selfWorth}}</td>
+<td>{{v.concentration}}</td>
+<td>{{v.extStressors}}</td>
+   <!-- <tr>
+        <td>{{v.dietaryNotes}}</td>
+        <td>{{v.stressEvents}}</td>
+        <td>{{v.percievedMoodInfluence}}</td>
+    </tr>
+<td>{{v.additionalNotes}}</td>-->

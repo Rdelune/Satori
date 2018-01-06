@@ -1,4 +1,4 @@
-System.register(['angular2/core', './mood', './playlist.component', './inputForm.component'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,30 +10,36 @@ System.register(['angular2/core', './mood', './playlist.component', './inputForm
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, mood_1, playlist_component_1, inputForm_component_1;
+    var core_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (mood_1_1) {
-                mood_1 = mood_1_1;
-            },
-            function (playlist_component_1_1) {
-                playlist_component_1 = playlist_component_1_1;
-            },
-            function (inputForm_component_1_1) {
-                inputForm_component_1 = inputForm_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.moods = [
-                        new mood_1.Mood(new Date(), 50, 50, [{}
-                        ], 100, 100, 100, 100, 100, [{}], 'Feeling good')
+                    this.firstPlaylistItem = {
+                        date: 10,
+                        generalMood: 50,
+                        apettite: 50,
+                        sleep: [{}],
+                        pleasureCapacity: 50,
+                        energyLevel: 50,
+                        motivation: 50,
+                        selfWorth: 50,
+                        concentration: 50,
+                        extStressors: [{}],
+                        additionalNotes: 0
+                    };
+                    [
+                        this.firstPlaylistItem
                     ];
                 }
+                AppComponent.prototype.onPlaylistItemDelete = function (mediaItem) {
+                };
+                ;
                 AppComponent.prototype.clickedButton = function () {
                     console.log('clicked');
                 };
@@ -41,7 +47,7 @@ System.register(['angular2/core', './mood', './playlist.component', './inputForm
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: 'app/ts/app.component.html',
-                        directives: [playlist_component_1.PlaylistComponent, inputForm_component_1.inputForm]
+                        styleUrls: ['app/ts/app.component.css']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

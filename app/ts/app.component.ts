@@ -1,48 +1,53 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
+import {AppModule } from './app.module';
 import {Config} from './config.service';
 import {Mood} from './mood';
 import {PlaylistComponent} from './playlist.component';
 import {inputForm} from './inputForm.component';
 
-
 @Component({
     selector: 'my-app',
     templateUrl: 'app/ts/app.component.html',
-    directives: [PlaylistComponent,inputForm]
+    styleUrls: ['app/ts/app.component.css']
 })
 
 export class AppComponent {
 
+    onPlaylistItemDelete(mediaItem){
+    };
+
     clickedButton(){
-        console.log('clicked');
-        
+        console.log('clicked');  
     }
+
+    firstPlaylistItem = {
+        date: 10,
+        generalMood: 50,
+        apettite: 50,
+        sleep: [{                       //will need to change to sleep object
+         //   sleepQuality:number;
+         //   sleepDifficulty:number;
+         //   sleepDreams:number;
+         //   sleepParalysis:number;
+         //   sleepNotes: number;
+        }],
+        pleasureCapacity:50,
+        energyLevel:50,
+        motivation:50,
+        selfWorth:50,
+        concentration:50,
+        extStressors: [{
+           // dietaryNotes:string,
+           // stressEvents:string,
+           // percievedMoodInfluence:string
+        }],
+        additionalNotes:0
+        }
 
     moods: Array <Mood>;
         constructor(){
-            this.moods = [
-                new Mood(
-                    new Date(),
-                    50,
-                    50, 
-                    [{}
-                   //     sleepQuality:50;
-                    //    sleepDifficulty:50;
-                    ////    sleepDreams:50;
-                    //    sleepParalysis:50;
-                   //     sleepNotes: 'good sleep, no issues';
-                    ],
-                    100,
-                    100,
-                    100,
-                    100,
-                    100,
-                    [{
-                     //   dietaryNotes: 'Taking pharmaton',
-                      //  stressEvents: '20 mins weights in morning + 5k run',
-                      //  percievedMoodInfluence:100;
-                    }],
-                    'Feeling good')
+             [
+                this.firstPlaylistItem
             ]
         }
 }

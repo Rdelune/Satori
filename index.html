@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Angular 2 QuickStart</title>
+    <title>Satori</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" href="/path/to/angular-slider/dist/rzslider.css"/>
-    <script src="/path/to/angularjs/angular.min.js"></script>
-    <script src="/path/to/angular-slider/dist/rzslider.min.js"></script>
-    <!-- Load libraries (Note: IE required polyfills, in this exact order_ -->
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
-
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <!-- Load libraries (Note: IE required polyfills, in this exact order -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="systemjs.config.js"></script>
 
     <!-- Configure SystemJS tets -->
     <script>
@@ -34,7 +27,7 @@
 </head>
 <body style='background-color: #74a9a6;'>
 <div class="container-fluid">
-    <my-app>Loading Satori yeeeeow...</my-app>
+    <my-app>Loading Satori...</my-app>
 </div>
 </body>
 </html>
