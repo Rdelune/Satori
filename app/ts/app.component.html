@@ -1,8 +1,20 @@
-<h1>
-  <b style='color:green'>Satori</b> moodkeeper<button type="button" class="btn btn-primary" style='float:right'>Make an Entry</button>
-</h1>
-<playlist [playlistItem]='firstPlaylistItem' (delete)="onPlaylistItemDelete($event)"  ></playlist>
-<inputForm></inputForm>
-<moodItemComponent>
-  
-</moodItemComponent>
+<nav>
+  <a base routerLink='/Home'>
+    <img src='media/1.png' class='icon'>
+  </a>
+  <a routerLink='/Make Entry'>
+    <img  src='media/2.png' class='icon'>
+  </a>
+  <a routerLink='/Log'>
+    <img  src='media/3.png' class='icon'>
+  </a>
+</nav>
+<section>
+  <header>
+    <h1>
+      <b style='color:green'>Satori</b> moodkeeper<button type="button" class="btn btn-primary" style='float:right'>Make an Entry</button>
+    </h1>
+    <mw-mood-item-list></mw-mood-item-list>
+    <mw-mood-item-form></mw-mood-item-form> 
+ </header>
+</section>

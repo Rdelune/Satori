@@ -1,0 +1,27 @@
+    .deleteButtons{
+        font-weight:bold;
+    }
+
+    .images{
+        position:relative
+    }
+
+    .sleep {
+
+        font-size:3px
+    }
+
+    .stressors {
+        font-size:3px
+    }
+
+    .favorite{    
+        color:blue;
+    }
+
+    .favorite-hover{
+        color:red;
+    }
+
+
+

@@ -20,11 +20,49 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             MoodItemComponent = (function () {
                 function MoodItemComponent() {
+                    this.delete = new core_1.EventEmitter();
+                    this.exampleProperty = 'example mood property';
+                    this.exampleTextContent = 'example text content';
+                    this.firstMoodItem = [{
+                            generalMood: 50,
+                            apettite: 50,
+                            pleasureCapacity: 50,
+                            energyLevel: 50,
+                            motivation: 50,
+                            selfWorth: 50,
+                            concentration: 50,
+                            additionalNotes: 0
+                        }, {
+                            generalMood: 50,
+                            apettite: 50,
+                            pleasureCapacity: 50,
+                            energyLevel: 50,
+                            motivation: 50,
+                            selfWorth: 50,
+                            concentration: 50,
+                            additionalNotes: 0
+                        }];
                 }
+                MoodItemComponent.prototype.exampleMethod = function () {
+                    return 'example function complete';
+                };
+                MoodItemComponent.prototype.onDelete = function () {
+                    this.delete.emit(this.moodItem);
+                    console.log('deleted');
+                };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], MoodItemComponent.prototype, "moodItem", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], MoodItemComponent.prototype, "delete", void 0);
                 MoodItemComponent = __decorate([
                     core_1.Component({
                         selector: 'mw-mood-item',
-                        templateUrl: 'app/ts/mood-item.component.html'
+                        templateUrl: 'app/ts/mood-item.component.html',
+                        styleUrls: ['app/ts/mood-item.component.css']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], MoodItemComponent);

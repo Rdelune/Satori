@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', './app.component', './playlist.component', './inputForm.component', './mood-item.component'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './app.component', './mood-item.component', './mood-item-form.component', './mood-item.service', './mood-item-list.component', './providers', './mock-xhr-backend', './app.routing'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', './app.component'
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, app_component_1, playlist_component_1, inputForm_component_1, mood_item_component_1;
+    var core_1, platform_browser_1, forms_1, http_1, app_component_1, mood_item_component_1, mood_item_form_component_1, mood_item_service_1, mood_item_list_component_1, providers_1, mock_xhr_backend_1, app_routing_1;
     var AppModule;
     return {
         setters:[
@@ -20,31 +20,63 @@ System.register(['@angular/core', '@angular/platform-browser', './app.component'
             function (platform_browser_1_1) {
                 platform_browser_1 = platform_browser_1_1;
             },
+            function (forms_1_1) {
+                forms_1 = forms_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
             },
-            function (playlist_component_1_1) {
-                playlist_component_1 = playlist_component_1_1;
-            },
-            function (inputForm_component_1_1) {
-                inputForm_component_1 = inputForm_component_1_1;
-            },
             function (mood_item_component_1_1) {
                 mood_item_component_1 = mood_item_component_1_1;
+            },
+            function (mood_item_form_component_1_1) {
+                mood_item_form_component_1 = mood_item_form_component_1_1;
+            },
+            function (mood_item_service_1_1) {
+                mood_item_service_1 = mood_item_service_1_1;
+            },
+            function (mood_item_list_component_1_1) {
+                mood_item_list_component_1 = mood_item_list_component_1_1;
+            },
+            function (providers_1_1) {
+                providers_1 = providers_1_1;
+            },
+            function (mock_xhr_backend_1_1) {
+                mock_xhr_backend_1 = mock_xhr_backend_1_1;
+            },
+            function (app_routing_1_1) {
+                app_routing_1 = app_routing_1_1;
             }],
         execute: function() {
+            //import { CategoryListPipe } from './category-list.pipe'
             AppModule = (function () {
                 function AppModule() {
                 }
                 AppModule = __decorate([
                     core_1.NgModule({
                         imports: [
-                            platform_browser_1.BrowserModule
+                            platform_browser_1.BrowserModule,
+                            forms_1.ReactiveFormsModule,
+                            http_1.HttpModule,
+                            app_routing_1.routing
                         ],
-                        declarations: [app_component_1.AppComponent, playlist_component_1.PlaylistComponent, inputForm_component_1.inputForm, mood_item_component_1.MoodItemComponent],
+                        declarations: [
+                            app_component_1.AppComponent,
+                            mood_item_list_component_1.MoodItemListComponent,
+                            mood_item_component_1.MoodItemComponent,
+                            mood_item_form_component_1.MoodItemFormComponent
+                        ],
+                        providers: [
+                            mood_item_service_1.MoodItemService,
+                            { provide: providers_1.lookupListToken, useValue: providers_1.lookupLists },
+                            { provide: http_1.XHRBackend, useValue: mock_xhr_backend_1.MockXHRBackend },
+                        ],
                         bootstrap: [
-                            app_component_1.AppComponent, playlist_component_1.PlaylistComponent, inputForm_component_1.inputForm, mood_item_component_1.MoodItemComponent
-                        ] //lets angular know the entry point for the bootstrap process
+                            app_component_1.AppComponent,
+                        ] //lets angular know the entry point for the bootstrap process    
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppModule);

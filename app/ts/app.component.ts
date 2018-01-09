@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import {AppModule } from './app.module';
+
 import {Config} from './config.service';
 import {Mood} from './mood';
-import {PlaylistComponent} from './playlist.component';
-import {inputForm} from './inputForm.component';
+import {MoodItemListComponent} from './mood-item-list.component';
+import { FormGroup } from '@angular/forms/src/model';
 
 @Component({
     selector: 'my-app',
@@ -13,11 +14,39 @@ import {inputForm} from './inputForm.component';
 
 export class AppComponent {
 
-    onPlaylistItemDelete(mediaItem){
+    public myForm: FormGroup;
+    public submitted: boolean;
+    public events: any[] = []
+
+    onMoodItemDelete(moodItem){
     };
 
     clickedButton(){
         console.log('clicked');  
+    }
+
+    firstMooditem = {
+        date: 10,
+        generalMood: 50,
+        apettite: 50,
+        sleep: [{                       //will need to change to sleep object
+         //   sleepQuality:number;
+         //   sleepDifficulty:number;
+         //   sleepDreams:number;
+         //   sleepParalysis:number;
+         //   sleepNotes: number;
+        }],
+        pleasureCapacity:50,
+        energyLevel:50,
+        motivation:50,
+        selfWorth:50,
+        concentration:50,
+        extStressors: [{
+           // dietaryNotes:string,
+           // stressEvents:string,
+           // percievedMoodInfluence:string
+        }],
+        additionalNotes:0
     }
 
     firstPlaylistItem = {
@@ -42,7 +71,83 @@ export class AppComponent {
            // percievedMoodInfluence:string
         }],
         additionalNotes:0
-        }
+    }
+
+
+    moodItems = [{
+        date: 10,
+        generalMood: 50,
+        apettite: 50,
+        sleep: [{                       //will need to change to sleep object
+         //   sleepQuality:number;
+         //   sleepDifficulty:number;
+         //   sleepDreams:number;
+         //   sleepParalysis:number;
+         //   sleepNotes: number;
+        }],
+        pleasureCapacity:50,
+        energyLevel:50,
+        motivation:50,
+        selfWorth:50,
+        concentration:50,
+        extStressors: [{
+           // dietaryNotes:string,
+           // stressEvents:string,
+           // percievedMoodInfluence:string
+        }],
+        additionalNotes:0
+    },{
+        date: 10,
+        generalMood: 50,
+        apettite: 50,
+        sleep: [{                       //will need to change to sleep object
+         //   sleepQuality:number;
+         //   sleepDifficulty:number;
+         //   sleepDreams:number;
+         //   sleepParalysis:number;
+         //   sleepNotes: number;
+        }],
+        pleasureCapacity:50,
+        energyLevel:50,
+        motivation:50,
+        selfWorth:50,
+        concentration:50,
+        extStressors: [{
+           // dietaryNotes:string,
+           // stressEvents:string,
+           // percievedMoodInfluence:string
+        }],
+        additionalNotes:0
+    },
+    {
+        date: 10,
+        generalMood: 50,
+        apettite: 50,
+        sleep: [{                       //will need to change to sleep object
+         //   sleepQuality:number;
+         //   sleepDifficulty:number;
+         //   sleepDreams:number;
+         //   sleepParalysis:number;
+         //   sleepNotes: number;
+        }],
+        pleasureCapacity:50,
+        energyLevel:50,
+        motivation:50,
+        selfWorth:50,
+        concentration:50,
+        extStressors: [{
+           // dietaryNotes:string,
+           // stressEvents:string,
+           // percievedMoodInfluence:string
+        }],
+        additionalNotes:0
+    }]
+
+
+
+
+
+
 
     moods: Array <Mood>;
         constructor(){

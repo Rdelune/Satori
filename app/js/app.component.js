@@ -20,6 +20,20 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.events = [];
+                    this.firstMooditem = {
+                        date: 10,
+                        generalMood: 50,
+                        apettite: 50,
+                        sleep: [{}],
+                        pleasureCapacity: 50,
+                        energyLevel: 50,
+                        motivation: 50,
+                        selfWorth: 50,
+                        concentration: 50,
+                        extStressors: [{}],
+                        additionalNotes: 0
+                    };
                     this.firstPlaylistItem = {
                         date: 10,
                         generalMood: 50,
@@ -33,11 +47,49 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         extStressors: [{}],
                         additionalNotes: 0
                     };
+                    this.moodItems = [{
+                            date: 10,
+                            generalMood: 50,
+                            apettite: 50,
+                            sleep: [{}],
+                            pleasureCapacity: 50,
+                            energyLevel: 50,
+                            motivation: 50,
+                            selfWorth: 50,
+                            concentration: 50,
+                            extStressors: [{}],
+                            additionalNotes: 0
+                        }, {
+                            date: 10,
+                            generalMood: 50,
+                            apettite: 50,
+                            sleep: [{}],
+                            pleasureCapacity: 50,
+                            energyLevel: 50,
+                            motivation: 50,
+                            selfWorth: 50,
+                            concentration: 50,
+                            extStressors: [{}],
+                            additionalNotes: 0
+                        },
+                        {
+                            date: 10,
+                            generalMood: 50,
+                            apettite: 50,
+                            sleep: [{}],
+                            pleasureCapacity: 50,
+                            energyLevel: 50,
+                            motivation: 50,
+                            selfWorth: 50,
+                            concentration: 50,
+                            extStressors: [{}],
+                            additionalNotes: 0
+                        }];
                     [
                         this.firstPlaylistItem
                     ];
                 }
-                AppComponent.prototype.onPlaylistItemDelete = function (mediaItem) {
+                AppComponent.prototype.onMoodItemDelete = function (moodItem) {
                 };
                 ;
                 AppComponent.prototype.clickedButton = function () {

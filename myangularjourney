@@ -1,0 +1,207 @@
+wednsday - started learning NPM
+thursday - watched how to build local server. NOTE - run angular project on npm server
+ - use nodesasss
+    run script to nodesass format
+    stle.css.map links style.css to sass, makes inspect element more useful
+    nodesass watch, watch folder for changes
+
+- may need to transpile if es6, use babel cli
+    es6 has let and contasnt variables
+    dont forget babel config file
+    js-transform in script 
+    SO helps in trnsforming es6 to readable js
+    
+
+ANGULAR
+    - need some typescript, es2015
+    - import is typescript
+    downwards through components
+    - each coponent has selector
+    - directive, display data client side
+    - interpolation = curly braces
+    - hashtag refecrences for direct injectiomn
+    DI DEPENDANCY INJECTION
+    - put app business logic in services
+        javscript logic not coupled with angular
+        allows for modular resusable code
+    ROUTING
+        - something to do with http
+    DECORATOR
+        - @whatever
+
+
+BUCKYTIPS
+    -
+
+
+GIT 
+    not staged = means needs to be added
+    - git add.
+    - git status (whats gonna be staged?)
+    - git log (what happened?)
+    - git commit -m "" (make commit with name)
+    - git checkout
+        if you delete a file, checkout and it will return. aka unstage the deletion
+    - git --all (grab everything and stage)
+    - git checkout hash (return to past version)    
+        detached head mode!!
+            - playground to do experimental shit
+            - changes wont be saved unless 
+            - create new branch,log, alternate reality!
+    - git branch (show branches)
+        - git branch master leaves it behind
+        - checkout goes into branch
+    - git merge alternateReality (with whatever im in)
+    - git branch -m alternatReality newName (change name)
+    - git branch -d alternateReality (branch delete)
+    - .gitignore, dont bother uploading these files 
+TYPESCRIPT    
+    - must be converted to js to run in browser (transpiler)
+
+FOLDER STRUCTURE
+    - when converted to js, map files created to help debug
+    - never edit node_modules
+    - package.json
+        - dependencies
+        - licences
+    -tsconfig
+        - outdir, when finished put in
+        - 
+    - typeing.json
+        - help convert stuff
+COMPONENTS            
+    - can be made of other components
+    - import {component} from angular class
+    - @Component({ 
+        selector: 'myAPP ' (referecnes component)
+        template: (actual html)
+        })
+    
+    - export class AppComponent {}
+        - can use it elsewhere
+    - system.js 
+        - packages, tells progream to do something when it sees new file
+        - tacks on .js extension for imported files
+
+FOR VIDEO CLASS  
+    - create class with attributes inside video.tsconfig
+    - create playlist component
+    - use template url instead of template, include full url
+        - make html file with whatever
+
+    - nesting components
+        - directives, mention which other component you want to include
+            dont freak out, here is a list of the other html components we wrote
+        - to nest variables in html
+                <tr *ngFor="# of videos">   
+            <td>{{v.id}}</td>  
+            <td>{{v.title}}</td> 
+            <td>{{v.description}}</td>
+                </tr>
+
+
+TUTORIALS (Continued 8 Jan)
+
+    - Components are really directives at heart. many are accessible to the user
+    - Angular template syntax
+        - interpolation
+        - Binding
+        - Expressions
+        - Conditional templating
+        - template variables
+        - Template expression operators
+    - interpolation
+        - {{property}}
+        - {{function ()}}
+        - [textContent]='exampleTextContent' or [textContent]='{{exampleTextContent}}'
+        - property binding = [] 
+        - event binding = ()
+    - Input class  
+        - make variable with Input()
+        - in appComponent, make the mooditemcomponent with properties
+        <mw-mood-item [mediaitem]='firstMediaItem'></mw-mood-item>
+        - firstMediaItem is the binding source from appcomponent
+        - mediaitem is the input property aka the binding targer
+    - Delete request
+        - need to set a property to an emitter
+        - emit output event inside delete function
+        - property called emit() will do the thing!
+        - onmooditemdelte($event), wil speak to the app compinent method witht the same name
+    - directives    
+        - structural and attributes
+        - structural is meant to remove and add DOM element
+            -*ngif='moodItemList.Date'/ if it eists
+            - work with template elements to modify the dom. <template [ngif]='moodItem.generalMood'></template>
+            - *ngFor='let moodItem of moodItems'
+            - syncatic sugar = star (gives template html parenthesis)  
+        - csss attribute/class directives 
+            -  [ngClass]="{'medium-sleep' : mediaItem.medium === 'sleep', 'medium-stressors': mediaItem.medium === 'stressors'}"
+   - medium checks for movies or services
+            - dom will fill with the appropraite class
+        - directives
+            - host binding binds host element to directive
+            - targets propertys to putt css class on
+   - Pipes - A template expression operator that takes in a value and reaturns a new value represenetaion
+        -   | date sent in for formatting
+        - mwfavorite wrapped in brackets to let angular know we want to do bbing here
+        - basically pipe interpolation into functions already made or your own
+
+    - Forms
+        - template driven or component drivem
+        - template driven   
+            - dont need to tell angular you have a form, you do need to tell it what feilds are needed
+
+    - Dependancy Injection
+        - inject components, directive, INJECTION
+        - inject only where needed
+        - needed to register for services
+        - step 1 i have a class, handle it for me - provide helper function
+        - step 2 i want these constructor parameters to be this typeing
+        - all classes then end up being singletons
+        - servces are a class that specify stuff you want to share
+        - can make a service in normal javascript
+        - likelability formulat that you can share across classes
+
+
+TODO
+    - Host binding, Host Listener, isFavorite - review! 
+    -no css added, check if it actually works on hover!
+    - MAKE SOME Pipes
+    - USE THE CSS directives
+    - ANGULAR FORM
+
+
+    *
+ngOnInit() {
+  this.form = new FormGroup({
+    date: new FormControl(new Date()),
+    generalMood: new FormControl('50'),
+    appetite: new FormControl('50', Validators.compose([
+      Validators.required,
+      Validators.pattern('[\\w\\-\\s\\/]+')
+    ])),
+    //sleep: new FormControl('50'),
+    sleepQuality: new FormControl('50'),
+    sleepDifficulty: new FormControl('50'),
+    sleepDreamIntensity: new FormControl('50'),
+    sleepParalysis: new FormControl('50'),
+    sleepNotes: new FormControl('A fine sleep'),
+    pleasureCapacity: new FormControl('50'),
+    energyLevel: new FormControl('50'),
+    motivation: new FormControl('50'),
+    selfWorth: new FormControl('50'),
+    concentration: new FormControl('50', this.motivationValidator),
+    //extStressors: new FormControl(),
+    dietaryNotes: new FormControl('Coffee and nicotine'),
+    stressEvents: new FormControl('Nothing worth mentioning'),
+    percievedMoodInfluence: new FormControl('50'),
+  })/*
+
+
+  - providers
+
+   these are things that come from my moduel tht i want to add to my inhjector
+
+
+removed from configts.json     "typings/main",
+    "typings/main.d.ts"
