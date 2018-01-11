@@ -213,15 +213,18 @@ TODO
     - MAKE SOME Pipes
     - USE THE CSS directives
     - ANGULAR FORM
-    - minify my files using gulp
-    gulp-livereload
-    sass
-    javascript test using mocha
-    mongoose
-    prerender
-    eexpress for http requests
-    http -server4 for local seercer
-    vpn/proxy
+    - npm modules to use
+        minify my files using gulp
+        gulp-livereload
+        sass
+        javascript test using mocha
+        mongoose
+        prerender
+        eexpress for http requests
+        http -server4 for local seercer
+        vpn/proxy
+    - link to google docs backend 
+    - get form 
 
 
 

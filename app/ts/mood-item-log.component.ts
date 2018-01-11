@@ -1,9 +1,13 @@
 import { Component, Inject } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
 
 import { MoodItemService } from './mood-item.service';
 import { lookupListToken } from './providers';
+
+
 
 @Component({
   selector: 'mw-mood-item-log',
@@ -12,58 +16,57 @@ import { lookupListToken } from './providers';
 })
 
 export class MoodItemLogComponent {
-  form;
+  list;
+  medium = '';
+  moodItems = [];
+  paramsSubscription;
 
   constructor(
     private formBuilder: FormBuilder,
     //allow access to media item service so we can add 
-    private moodItemService: MoodItemService,   
+    private moodItemService: MoodItemService,  
+    private activatedRoute: ActivatedRoute) {}
     //tells angular that we want the lookuplist value item
     //we want to use this in the template markup so we can render out the select options in the form
     // we are using the opaque token we created, this is value type injection
-    @Inject(lookupListToken) public lookupLists,
-    private router: Router
-  ) {}
 
-    /*
+
   ngOnInit() {
-    this.form = this.formBuilder.group({
-      medium: this.formBuilder.control('Movies'),
-      name: this.formBuilder.control('', Validators.compose([
-        Validators.required,
-        Validators.pattern('[\\w\\-\\s\\/]+')
-      ])),
-      category: this.formBuilder.control(''),
-      year: this.formBuilder.control('', this.yearValidator),
-    });
-  }*/
-  ngOnInit() {
-    this.form = this.formBuilder.group({
-      date: this.formBuilder.control(new Date()),
-      generalMood: this.formBuilder.control('50'),
-      appetite: this.formBuilder.control('50', Validators.compose([
-        Validators.required,
-        Validators.pattern('[\\w\\-\\s\\/]+')
-      ])),
-      //sleep: new FormControl('50'),
-      timeOfDay: this.formBuilder.control('50'),
-      sleepQuality: this.formBuilder.control('50'),
-      sleepDifficulty: this.formBuilder.control('50'),
-      sleepDreamIntensity: this.formBuilder.control('50'),
-      sleepParalysis: this.formBuilder.control('50'),
-      sleepNotes: this.formBuilder.control('A fine sleep'),
-      pleasureCapacity: this.formBuilder.control('50'),
-      energyLevel: this.formBuilder.control('50'),
-      motivation: this.formBuilder.control('50'),
-      selfWorth: this.formBuilder.control('50'),
-      concentration: this.formBuilder.control('50', this.percentageValidator),
-      //extStressors: new FormControl(),
-      dietaryNotes: this.formBuilder.control('Coffee and nicotine'),
-      stressEvents: this.formBuilder.control('Nothing worth mentioning'),
-      percievedMoodInfluence: this.formBuilder.control('50'),
-      additionalNotes: this.formBuilder.control('50')
-      })  
+
+    this.paramsSubscription = this.activatedRoute.params
+      .subscribe(params => {
+        let medium = params['medium'];
+        if(medium.toLowerCase() === 'all') {
+          medium = '';
+        }
+        this.getMoodItems(medium);
+      });
+
+      
   }
+
+  ngOnDestroy() {
+    this.paramsSubscription.unsubscribe();
+  }
+
+  onMoodItemDelete(moodItem) {
+    this.moodItemService.delete(moodItem)
+      .subscribe(() => {
+        this.getMoodItems(this.medium);
+      });
+  }
+
+  getMoodItems(medium) {
+    this.medium = medium;
+    this.moodItemService.get(medium)
+      .subscribe(moodItems => {
+        this.moodItems = moodItems;
+      });
+
+      console.log('MOOD ITEMS')
+      console.log(this.moodItems)
+  }
+
 
   percentageValidator(control){
     if (control.value.trim().length === 0){
@@ -86,31 +89,4 @@ export class MoodItemLogComponent {
  }
 }
 
-/*
-  yearValidator(control) {
-    if (control.value.trim().length === 0) {
-      return null;
-    }
-    let year = parseInt(control.value);
-    let minYear = 1800;
-    let maxYear = 2500;
-    if (year >= minYear && year <= maxYear) {
-      return null;
-    } else {
-      return {
-        'year': {
-          min: minYear,
-          max: maxYear
-        }
-      };
-    }
-  }
-*/
-
-  onSubmit(moodItem) {
-    this.moodItemService.add(moodItem)
-      .subscribe(() => {
-        this.router.navigate(['/', moodItem.medium]);
-      });
-  }
 }

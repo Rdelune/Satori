@@ -16,7 +16,6 @@ import { MockXHRBackend } from './mock-xhr-backend';
 import { routing } from './app.routing';
 import { APP_BASE_HREF} from '@angular/common'
 
-
 @NgModule({
   imports: [
     BrowserModule,

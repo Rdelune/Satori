@@ -8,7 +8,9 @@
     [ngClass]="{'medium-sleep': moodItem.medium==='Sleep', 'medium-stressors':moodItem.medium==='Stressors'}" 
     *ngFor="let moodItem of moodItems"
     [moodItem]="moodItem"
-    (delete)="onMoodItemDelete($event)"></mw-mood-item>
+    (delete)="onMoodItemDelete($event)">
+  </mw-mood-item>
+  <mw-mood-item-log></mw-mood-item-log>
 </section>
 <footer>
   <a routerLink="/add">

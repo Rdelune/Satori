@@ -33,48 +33,5 @@ export class MoodItemService {
       .map(response => {});
   }
 
-  moodItemsServiceFile = [{
-    date: 40,
-    generalMood: 40,
-    appetite: 70,
-    //sleep: new FormControl('50'),
-    timeOfDay: 'Afternoon',
-    sleepQuality: 80,
-    sleepDifficulty: 80,
-    sleepDreamIntensity: 20,
-    sleepParalysis: 20,
-    sleepNotes: 'Well rested',
-    pleasureCapacity: 70,
-    energyLevel: 60,
-    motivation: 60,
-    selfWorth: 40,
-    concentration: 60,
-    //extStressors: new FormControl(),
-    dietaryNotes: 'nicotine',
-    stressEvents: 'Nothing worth mentioning',
-    percievedMoodInfluence: '65',
-    additionalNotes: 'None'
-},{
-    date: 40,
-    generalMood: 40,
-    appetite: 70,
-    //sleep: new FormControl('50'),
-    timeOfDay: 'Afternoon',
-    sleepQuality: 80,
-    sleepDifficulty: 80,
-    sleepDreamIntensity: 20,
-    sleepParalysis: 20,
-    sleepNotes: 'Well rested',
-    pleasureCapacity: 70,
-    energyLevel: 60,
-    motivation: 60,
-    selfWorth: 50,
-    concentration: 40,
-    //extStressors: new FormControl(),
-    dietaryNotes: 'nicotine',
-    stressEvents: 'Very minor misunderstanding',
-    percievedMoodInfluence: '65',
-    additionalNotes: 'None'
-}]
 
 }
