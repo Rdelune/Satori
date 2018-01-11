@@ -1,6 +1,5 @@
-System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-item.service'], function(exports_1, context_1) {
+System.register(["@angular/core", "@angular/forms", "@angular/router", "./mood-item.service"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +9,10 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, forms_1, router_1, mood_item_service_1;
-    var MoodItemLogComponent;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, forms_1, router_1, mood_item_service_1, MoodItemLogComponent;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -25,8 +24,9 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
             },
             function (mood_item_service_1_1) {
                 mood_item_service_1 = mood_item_service_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             MoodItemLogComponent = (function () {
                 function MoodItemLogComponent(formBuilder, 
                     //allow access to media item service so we can add 
@@ -90,18 +90,20 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
                         };
                     }
                 };
-                MoodItemLogComponent = __decorate([
-                    core_1.Component({
-                        selector: 'mw-mood-item-log',
-                        templateUrl: 'app/ts/mood-item-log.component.html',
-                        styleUrls: ['app/ts/mood-item-log.component.css']
-                    }), 
-                    __metadata('design:paramtypes', [forms_1.FormBuilder, mood_item_service_1.MoodItemService, router_1.ActivatedRoute])
-                ], MoodItemLogComponent);
                 return MoodItemLogComponent;
             }());
+            MoodItemLogComponent = __decorate([
+                core_1.Component({
+                    selector: 'mw-mood-item-log',
+                    templateUrl: 'app/ts/mood-item-log.component.html',
+                    styleUrls: ['app/ts/mood-item-log.component.css']
+                }),
+                __metadata("design:paramtypes", [forms_1.FormBuilder,
+                    mood_item_service_1.MoodItemService,
+                    router_1.ActivatedRoute])
+            ], MoodItemLogComponent);
             exports_1("MoodItemLogComponent", MoodItemLogComponent);
         }
-    }
+    };
 });
 //# sourceMappingURL=mood-item-log.component.js.map

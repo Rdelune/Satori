@@ -80,4 +80,6 @@ export class MoodItemFormComponent {
         this.router.navigate(['/', moodItem.medium]);
       });
   }
+
+  
 }

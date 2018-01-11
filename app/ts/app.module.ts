@@ -21,7 +21,7 @@ import { APP_BASE_HREF} from '@angular/common'
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
-    routing
+    routing,
   ],
   declarations: [
     AppComponent,
@@ -35,7 +35,7 @@ import { APP_BASE_HREF} from '@angular/common'
   providers: [
     MoodItemService,
     { provide: lookupListToken, useValue: lookupLists },
-    { provide: XHRBackend, useClass: MockXHRBackend },
+    { provide: XHRBackend, useClass: XHRBackend },
     //Enter app at this point - home
     { provide: APP_BASE_HREF, useValue: '/'}
   ],

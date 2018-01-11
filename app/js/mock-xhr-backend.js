@@ -1,66 +1,19 @@
-System.register(['@angular/http', 'rxjs/Observable'], function(exports_1, context_1) {
+System.register(["@angular/http", "rxjs/Observable"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var http_1, Observable_1;
-    var MockXHRBackend;
+    var http_1, Observable_1, MockXHRBackend, moodItem, index;
     return {
-        setters:[
+        setters: [
             function (http_1_1) {
                 http_1 = http_1_1;
             },
             function (Observable_1_1) {
                 Observable_1 = Observable_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             MockXHRBackend = (function () {
                 function MockXHRBackend() {
-                    this._moodItems = [{
-                            medium: 'Sleep',
-                            id: 0,
-                            date: 40,
-                            generalMood: 40,
-                            appetite: 70,
-                            //sleep: new FormControl('50'),
-                            timeOfDay: 'Afternoon',
-                            sleepQuality: 80,
-                            sleepDifficulty: 80,
-                            sleepDreamIntensity: 20,
-                            sleepParalysis: 20,
-                            sleepNotes: 'Well rested',
-                            pleasureCapacity: 70,
-                            energyLevel: 60,
-                            motivation: 60,
-                            selfWorth: 40,
-                            concentration: 60,
-                            //extStressors: new FormControl(),
-                            dietaryNotes: 'nicotine',
-                            stressEvents: 'Nothing worth mentioning',
-                            percievedMoodInfluence: '65',
-                            additionalNotes: 'None'
-                        }, {
-                            medium: 'Stressors',
-                            id: 0,
-                            date: 40,
-                            generalMood: 40,
-                            appetite: 70,
-                            //sleep: new FormControl('50'),
-                            timeOfDay: 'Afternoon',
-                            sleepQuality: 80,
-                            sleepDifficulty: 80,
-                            sleepDreamIntensity: 20,
-                            sleepParalysis: 20,
-                            sleepNotes: 'Well rested',
-                            pleasureCapacity: 70,
-                            energyLevel: 60,
-                            motivation: 60,
-                            selfWorth: 50,
-                            concentration: 40,
-                            //extStressors: new FormControl(),
-                            dietaryNotes: 'nicotine',
-                            stressEvents: 'Very minor misunderstanding',
-                            percievedMoodInfluence: '65',
-                            additionalNotes: 'None'
-                        }];
                 }
                 MockXHRBackend.prototype.createConnection = function (request) {
                     var _this = this;
@@ -114,25 +67,76 @@ System.register(['@angular/http', 'rxjs/Observable'], function(exports_1, contex
                     });
                     return { response: response };
                 };
-                MockXHRBackend.prototype._deleteMoodItem = function (id) {
-                    var moodItem = this._moodItems.find(function (moodItem) { return moodItem.id === id; });
-                    var index = this._moodItems.indexOf(moodItem);
-                    if (index >= 0) {
-                        this._moodItems.splice(index, 1);
-                    }
-                };
-                MockXHRBackend.prototype._getNewId = function () {
-                    if (this._moodItems.length > 0) {
-                        return Math.max.apply(Math, this._moodItems.map(function (moodItem) { return moodItem.id; })) + 1;
-                    }
-                    else {
-                        return 1;
-                    }
-                };
+                MockXHRBackend.prototype. = function* () { };
                 return MockXHRBackend;
             }());
             exports_1("MockXHRBackend", MockXHRBackend);
+            /;
+            _deleteMoodItem(id);
+            {
+                moodItem = this._moodItems.find(function (moodItem) { return moodItem.id === id; });
+                index = this._moodItems.indexOf(moodItem);
+                if (index >= 0) {
+                    this._moodItems.splice(index, 1);
+                }
+            }
+            _getNewId();
+            {
+                if (this._moodItems.length > 0) {
+                    return Math.max.apply(Math, this._moodItems.map(function (moodItem) { return moodItem.id; })) + 1;
+                }
+                else {
+                    return 1;
+                }
+                _moodItems = [{
+                        medium: 'Sleep',
+                        id: 0,
+                        date: 40,
+                        generalMood: 40,
+                        appetite: 70,
+                        //sleep: new FormControl('50'),
+                        timeOfDay: 'Afternoon',
+                        sleepQuality: 80,
+                        sleepDifficulty: 80,
+                        sleepDreamIntensity: 20,
+                        sleepParalysis: 20,
+                        sleepNotes: 'Well rested',
+                        pleasureCapacity: 70,
+                        energyLevel: 60,
+                        motivation: 60,
+                        selfWorth: 40,
+                        concentration: 60,
+                        //extStressors: new FormControl(),
+                        dietaryNotes: 'nicotine',
+                        stressEvents: 'Nothing worth mentioning',
+                        percievedMoodInfluence: '65',
+                        additionalNotes: 'None'
+                    }, {
+                        medium: 'Stressors',
+                        id: 0,
+                        date: 40,
+                        generalMood: 40,
+                        appetite: 70,
+                        //sleep: new FormControl('50'),
+                        timeOfDay: 'Afternoon',
+                        sleepQuality: 80,
+                        sleepDifficulty: 80,
+                        sleepDreamIntensity: 20,
+                        sleepParalysis: 20,
+                        sleepNotes: 'Well rested',
+                        pleasureCapacity: 70,
+                        energyLevel: 60,
+                        motivation: 60,
+                        selfWorth: 50,
+                        concentration: 40,
+                        //extStressors: new FormControl(),
+                        dietaryNotes: 'nicotine',
+                        stressEvents: 'Very minor misunderstanding',
+                        percievedMoodInfluence: '65',
+                        additionalNotes: 'None'
+                    }];
+            }
         }
-    }
+    };
 });
 //# sourceMappingURL=mock-xhr-backend.js.map

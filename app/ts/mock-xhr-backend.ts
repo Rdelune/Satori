@@ -4,7 +4,7 @@ import { Observer } from 'rxjs/Observer';
 
 export class MockXHRBackend {
   constructor() {
-  }
+ }
 
   createConnection(request: Request) {
     var response = new Observable((responseObserver: Observer<Response>) => {
@@ -54,7 +54,7 @@ export class MockXHRBackend {
       return () => { };
     });
     return { response };
-  }
+  } */
 
   _deleteMoodItem(id) {
     var moodItem = this._moodItems.find(moodItem => moodItem.id === id);
@@ -70,7 +70,8 @@ export class MockXHRBackend {
     } else {
       return 1;
     }
-  }
+  
+
 
 
   _moodItems = [{
@@ -121,6 +122,8 @@ export class MockXHRBackend {
     additionalNotes: 'None'
 }]
 
-
+  }
 
 }
+    
+

@@ -10,7 +10,10 @@
     [moodItem]="moodItem"
     (delete)="onMoodItemDelete($event)">
   </mw-mood-item>
-  <mw-mood-item-log></mw-mood-item-log>
+  <div id="login-box" class="hide">
+    <p>Please login on your google account.</p>
+    <button id="btnLogin" onclick="handleAuthClick()" class="button">Login</button>
+  </div>
 </section>
 <footer>
   <a routerLink="/add">

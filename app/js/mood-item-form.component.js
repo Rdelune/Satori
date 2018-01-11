@@ -1,6 +1,5 @@
-System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-item.service', './providers'], function(exports_1, context_1) {
+System.register(["@angular/core", "@angular/forms", "@angular/router", "./mood-item.service", "./providers"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13,10 +12,10 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, forms_1, router_1, mood_item_service_1, providers_1;
-    var MoodItemFormComponent;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, forms_1, router_1, mood_item_service_1, providers_1, MoodItemFormComponent;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -31,8 +30,9 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
             },
             function (providers_1_1) {
                 providers_1 = providers_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             MoodItemFormComponent = (function () {
                 function MoodItemFormComponent(formBuilder, 
                     //allow access to media item service so we can add 
@@ -100,19 +100,20 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
                         _this.router.navigate(['/', moodItem.medium]);
                     });
                 };
-                MoodItemFormComponent = __decorate([
-                    core_1.Component({
-                        selector: 'mw-mood-item-form',
-                        templateUrl: 'app/ts/mood-item-form.component.html',
-                        styleUrls: ['app/ts/mood-item-form.component.css']
-                    }),
-                    __param(2, core_1.Inject(providers_1.lookupListToken)), 
-                    __metadata('design:paramtypes', [forms_1.FormBuilder, mood_item_service_1.MoodItemService, Object, router_1.Router])
-                ], MoodItemFormComponent);
                 return MoodItemFormComponent;
             }());
+            MoodItemFormComponent = __decorate([
+                core_1.Component({
+                    selector: 'mw-mood-item-form',
+                    templateUrl: 'app/ts/mood-item-form.component.html',
+                    styleUrls: ['app/ts/mood-item-form.component.css']
+                }),
+                __param(2, core_1.Inject(providers_1.lookupListToken)),
+                __metadata("design:paramtypes", [forms_1.FormBuilder,
+                    mood_item_service_1.MoodItemService, Object, router_1.Router])
+            ], MoodItemFormComponent);
             exports_1("MoodItemFormComponent", MoodItemFormComponent);
         }
-    }
+    };
 });
 //# sourceMappingURL=mood-item-form.component.js.map

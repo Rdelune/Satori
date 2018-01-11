@@ -37,7 +37,7 @@ export class Mood {
             this.generalMood = generalMood;
             this.apettite = apettite;
             this.sleepQuality = sleepQuality;
-            this.sleepDifficulty:sleepDifficulty;
+            this.sleepDifficulty = sleepDifficulty;
             this.sleepDreamIntensity = sleepDreamIntensity;
             this.sleepParalysis = sleepParalysis;
             this.sleepNotes =  sleepNotes;
@@ -47,7 +47,7 @@ export class Mood {
             this.selfWorth = selfWorth;
             this.concentration = concentration;
             this.dietaryNotes = dietaryNotes,
-            this.stressEvents =stressEvents,
+            this.stressEvents = stressEvents,
             this.percievedMoodInfluence = percievedMoodInfluence,
             this.additionalNotes = additionalNotes;
     }
