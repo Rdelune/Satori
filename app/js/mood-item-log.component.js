@@ -14,7 +14,7 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
         return function (target, key) { decorator(target, key, paramIndex); }
     };
     var core_1, forms_1, router_1, mood_item_service_1, providers_1;
-    var MoodItemFormComponent;
+    var MoodItemLogComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -33,8 +33,8 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
                 providers_1 = providers_1_1;
             }],
         execute: function() {
-            MoodItemFormComponent = (function () {
-                function MoodItemFormComponent(formBuilder, 
+            MoodItemLogComponent = (function () {
+                function MoodItemLogComponent(formBuilder, 
                     //allow access to media item service so we can add 
                     moodItemService, 
                     //tells angular that we want the lookuplist value item
@@ -46,9 +46,20 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
                     this.lookupLists = lookupLists;
                     this.router = router;
                 }
-                MoodItemFormComponent.prototype.ngOnInit = function () {
+                /*
+              ngOnInit() {
+                this.form = this.formBuilder.group({
+                  medium: this.formBuilder.control('Movies'),
+                  name: this.formBuilder.control('', Validators.compose([
+                    Validators.required,
+                    Validators.pattern('[\\w\\-\\s\\/]+')
+                  ])),
+                  category: this.formBuilder.control(''),
+                  year: this.formBuilder.control('', this.yearValidator),
+                });
+              }*/
+                MoodItemLogComponent.prototype.ngOnInit = function () {
                     this.form = this.formBuilder.group({
-                        id: Math.random(),
                         date: this.formBuilder.control(new Date()),
                         generalMood: this.formBuilder.control('50'),
                         appetite: this.formBuilder.control('50', forms_1.Validators.compose([
@@ -74,7 +85,7 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
                         additionalNotes: this.formBuilder.control('50')
                     });
                 };
-                MoodItemFormComponent.prototype.percentageValidator = function (control) {
+                MoodItemLogComponent.prototype.percentageValidator = function (control) {
                     if (control.value.trim().length === 0) {
                         return null;
                     }
@@ -93,26 +104,46 @@ System.register(['@angular/core', '@angular/forms', '@angular/router', './mood-i
                         };
                     }
                 };
-                MoodItemFormComponent.prototype.onSubmit = function (moodItem) {
+                /*
+                  yearValidator(control) {
+                    if (control.value.trim().length === 0) {
+                      return null;
+                    }
+                    let year = parseInt(control.value);
+                    let minYear = 1800;
+                    let maxYear = 2500;
+                    if (year >= minYear && year <= maxYear) {
+                      return null;
+                    } else {
+                      return {
+                        'year': {
+                          min: minYear,
+                          max: maxYear
+                        }
+                      };
+                    }
+                  }
+                */
+                MoodItemLogComponent.prototype.onSubmit = function (moodItem) {
                     var _this = this;
                     this.moodItemService.add(moodItem)
                         .subscribe(function () {
                         _this.router.navigate(['/', moodItem.medium]);
                     });
                 };
-                MoodItemFormComponent = __decorate([
+                MoodItemLogComponent = __decorate([
                     core_1.Component({
-                        selector: 'mw-mood-item-form',
-                        templateUrl: 'app/ts/mood-item-form.component.html',
-                        styleUrls: ['app/ts/mood-item-form.component.css']
+                        selector: 'mw-mood-item-log',
+                        templateUrl: 'app/ts/mood-item-log.component.html',
+                        styleUrls: ['app/ts/mood-item-log.component.css']
                     }),
                     __param(2, core_1.Inject(providers_1.lookupListToken)), 
                     __metadata('design:paramtypes', [forms_1.FormBuilder, mood_item_service_1.MoodItemService, Object, router_1.Router])
-                ], MoodItemFormComponent);
-                return MoodItemFormComponent;
+                ], MoodItemLogComponent);
+                return MoodItemLogComponent;
             }());
-            exports_1("MoodItemFormComponent", MoodItemFormComponent);
+            exports_1("MoodItemLogComponent", MoodItemLogComponent);
         }
     }
 });
-//# sourceMappingURL=mood-item-form.component.js.map
+//# sourceMappingURL=mood-item-log.component.js.map

@@ -11,40 +11,40 @@ export class MockXHRBackend {
       var responseOptions;
       switch (request.method) {
         case RequestMethod.Get:
-          if (request.url.indexOf('mediaitems?medium=') >= 0 || request.url === 'mediaitems') {
+          if (request.url.indexOf('moodItems?medium=') >= 0 || request.url === 'moodItems') {
             var medium;
             if (request.url.indexOf('?') >= 0) {
               medium = request.url.split('=')[1];
               if (medium === 'undefined') medium = '';
             }
-            var mediaItems;
+            var moodItems;
             if (medium) {
-              mediaItems = this._mediaItems.filter(mediaItem => mediaItem.medium === medium);
+              moodItems = this._moodItems.filter(moodItem => moodItem.medium === medium);
             } else {
-              mediaItems = this._mediaItems;
+              moodItems = this._moodItems;
             }
             responseOptions = new ResponseOptions({
-              body: { mediaItems: JSON.parse(JSON.stringify(mediaItems)) },
+              body: { moodItems: JSON.parse(JSON.stringify(moodItems)) },
               status: 200
             });
           } else {
             var id = parseInt(request.url.split('/')[1]);
-            mediaItems = this._mediaItems.filter(mediaItem => mediaItem.id === id);
+            moodItem = this._moodItems.filter(moodItem => moodItem.id === id);
             responseOptions = new ResponseOptions({
-              body: JSON.parse(JSON.stringify(mediaItems[0])),
+              body: JSON.parse(JSON.stringify(moodItems[0])),
               status: 200
             });
           }
           break;
         case RequestMethod.Post:
-          var mediaItem = JSON.parse(request.text().toString());
-          mediaItem.id = this._getNewId();
-          this._mediaItems.push(mediaItem);
+          var moodItem = JSON.parse(request.text().toString());
+          moodItem.id = this._getNewId();
+          this._moodItems.push(moodItem);
           responseOptions = new ResponseOptions({ status: 201 });
           break;
         case RequestMethod.Delete:
           var id = parseInt(request.url.split('/')[1]);
-          this._deleteMediaItem(id);
+          this._deleteMoodItem(id);
           responseOptions = new ResponseOptions({ status: 200 });
       }
 
@@ -56,64 +56,71 @@ export class MockXHRBackend {
     return { response };
   }
 
-  _deleteMediaItem(id) {
-    var mediaItem = this._mediaItems.find(mediaItem => mediaItem.id === id);
-    var index = this._mediaItems.indexOf(mediaItem);
+  _deleteMoodItem(id) {
+    var moodItem = this._moodItems.find(moodItem => moodItem.id === id);
+    var index = this._moodItems.indexOf(moodItem);
     if (index >= 0) {
-      this._mediaItems.splice(index, 1);
+      this._moodItems.splice(index, 1);
     }
   }
 
   _getNewId() {
-    if (this._mediaItems.length > 0) {
-      return Math.max.apply(Math, this._mediaItems.map(mediaItem => mediaItem.id)) + 1;
+    if (this._moodItems.length > 0) {
+      return Math.max.apply(Math, this._moodItems.map(moodItem => moodItem.id)) + 1;
     } else {
       return 1;
     }
   }
 
-  _mediaItems = [
-    {
-      id: 1,
-      name: "Firebug",
-      medium: "Series",
-      category: "Science Fiction",
-      year: 2010,
-      watchedOn: 1294166565384,
-      isFavorite: false
-    },
-    {
-      id: 2,
-      name: "The Small Tall",
-      medium: "Movies",
-      category: "Comedy",
-      year: 2015,
-      watchedOn: null,
-      isFavorite: true
-    }, {
-      id: 3,
-      name: "The Redemption",
-      medium: "Movies",
-      category: "Action",
-      year: 2016,
-      watchedOn: null,
-      isFavorite: false
-    }, {
-      id: 4,
-      name: "Hoopers",
-      medium: "Series",
-      category: "Drama",
-      year: null,
-      watchedOn: null,
-      isFavorite: true
-    }, {
-      id: 5,
-      name: "Happy Joe: Cheery Road",
-      medium: "Movies",
-      category: "Action",
-      year: 2015,
-      watchedOn: 1457166565384,
-      isFavorite: false
-    }
-  ];
+
+  _moodItems = [{
+    medium: 'Sleep',
+    id:0,
+    date: 40,
+    generalMood: 40,
+    appetite: 70,
+    //sleep: new FormControl('50'),
+    timeOfDay: 'Afternoon',
+    sleepQuality: 80,
+    sleepDifficulty: 80,
+    sleepDreamIntensity: 20,
+    sleepParalysis: 20,
+    sleepNotes: 'Well rested',
+    pleasureCapacity: 70,
+    energyLevel: 60,
+    motivation: 60,
+    selfWorth: 40,
+    concentration: 60,
+    //extStressors: new FormControl(),
+    dietaryNotes: 'nicotine',
+    stressEvents: 'Nothing worth mentioning',
+    percievedMoodInfluence: '65',
+    additionalNotes: 'None'
+},{
+    medium: 'Stressors',
+    id:0,
+    date: 40,
+    generalMood: 40,
+    appetite: 70,
+    //sleep: new FormControl('50'),
+    timeOfDay: 'Afternoon',
+    sleepQuality: 80,
+    sleepDifficulty: 80,
+    sleepDreamIntensity: 20,
+    sleepParalysis: 20,
+    sleepNotes: 'Well rested',
+    pleasureCapacity: 70,
+    energyLevel: 60,
+    motivation: 60,
+    selfWorth: 50,
+    concentration: 40,
+    //extStressors: new FormControl(),
+    dietaryNotes: 'nicotine',
+    stressEvents: 'Very minor misunderstanding',
+    percievedMoodInfluence: '65',
+    additionalNotes: 'None'
+}]
+
+
+
 }

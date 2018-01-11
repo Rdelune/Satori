@@ -1,0 +1,97 @@
+
+<header></header>
+<div>Mood Item List<!--{{ mediaitems | categoryList }}--></div>
+
+<section>
+<mw-mood-item 
+[ngClass]="{'medium-sleep' : mediaItem.medium === 'sleep', 'medium-stressors': mediaItem.medium === 'stressors'}"
+*ngFor='let moodItem of moodItems'
+[moodItem]='moodItem'
+(delete)='onMoodItemDelete($event)'>
+</mw-mood-item>
+
+<table class='table table-hover'>
+<thead>
+    <tr>
+        <td style='width: 30px;'><b>Date</b></td>
+        <td><b>General Mood</b></td>
+        <td><b>Appetite</b></td>
+        <td><b>Sleep</b></td>
+            <!--<tr>
+                <td>sleepQuality</td>
+                <td>sleepDifficulty</td>
+                <td>sleepDreams</td>
+                <td>sleepParalysis</td>
+                <td>sleepNotes</td>
+            </tr>-->
+        <td><b>Capacity for Pleasure</b></td>
+        <td><b>Energy Leve</b></td>
+        <td><b>Motivation</b></td>
+        <td><b>Self Worth</b></td>
+        <td><b>Concentration</b></td>
+        <td><b>Ext. Stressors</b></td>
+           <!-- <tr>
+                <td>dietaryNotes</td>
+                <td>stressEvents</td>
+                <td>percievedMoodInfluence</td>
+            </tr>-->
+        <td><b>Additional Notes</b></td>
+    </tr>
+</thead>
+<tbody>
+    <tr (click)="clickedButton(v)" (delete)="onMediaItemDeleteEvenet(v)">   
+        <td>1</td>  
+        <td>2</td> 
+        <td>3</td>
+        <td>4</td>
+           <!-- <tr>
+                <td>{{v.sleepQuality}}</td>
+                <td>{{v.sleepDifficulty}}</td>
+                <td>{{v.sleepDreams}}</td>
+                <td>{{v.sleepParalysis}}</td>
+                <td>{{v.sleepNotes}}</td>
+            </tr>-->
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+           <!-- <tr>
+                <td>{{v.dietaryNotes}}</td>
+                <td>{{v.stressEvents}}</td>
+                <td>{{v.percievedMoodInfluence}}</td>
+            </tr>-->
+        <td>11</td>
+    </tr>
+</tbody>
+</table>
+</section>
+<footer>
+<a routerLink='add'>
+    <img src='media/01.png' class='icon'>
+</a>
+</footer><!--
+<td>1</td>  
+<td>{{v.generalMood}}</td> 
+<td>{{v.apetite}}</td>
+<td>{{v.sleep}}</td>
+<tr>
+    <td>{{v.sleepQuality}}</td>
+    <td>{{v.sleepDifficulty}}</td>
+    <td>{{v.sleepDreams}}</td>
+    <td>{{v.sleepParalysis}}</td>
+    <td>{{v.sleepNotes}}</td>
+</tr>
+<td>{{v.pleasureCapacity}}</td>
+<td>{{v.energyLevel}}</td>
+<td>{{v.motivation}}</td>
+<td>{{v.selfWorth}}</td>
+<td>{{v.concentration}}</td>
+<td>{{v.extStressors}}</td>
+< <tr>
+    <td>{{v.dietaryNotes}}</td>
+    <td>{{v.stressEvents}}</td>
+    <td>{{v.percievedMoodInfluence}}</td>
+</tr>
+<td>{{v.additionalNotes}}</td>-->

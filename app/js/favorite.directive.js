@@ -31,7 +31,6 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 };
                 Object.defineProperty(FavoriteDirective.prototype, "mwFavorite", {
                     set: function (value) {
-                        console.log('mwfavourite value is ' + value);
                         this.isFavorite = value;
                     },
                     enumerable: true,
@@ -74,4 +73,4 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         }
     }
 });
-//# sourceMappingURL=significantMood.directive.js.map
+//# sourceMappingURL=favorite.directive.js.map

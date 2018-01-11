@@ -15,7 +15,4 @@ System.register(['@angular/platform-browser-dynamic', './app.module'], function(
         }
     }
 });
-//import {AppComponent} from './app.component';
-//import {Config} from './config.service';
-//bootstrap(AppComponent);
 //# sourceMappingURL=main.js.map

@@ -1,13 +1,14 @@
-import { Routes, RouterModule } from '@angular/router'
-import { MoodItemFormComponent } from './mood-item-form.component'
-import {MoodItemListComponent} from './mood-item-list.component'
+import { Routes, RouterModule } from '@angular/router';
 
-const appRoute: Routes = [
-    { path: 'add', component : MoodItemFormComponent},
-    { path: 'Make Entry', component : MoodItemFormComponent},
-    { path: 'Log', component : MoodItemListComponent},
-    { path: ':timeOfDay'},
-    { path: '', pathMatch:'', redirectTo:'all'}
-]
+import { MoodItemFormComponent } from './mood-item-form.component';
+import { MoodItemListComponent } from './mood-item-list.component';
+import { MoodItemLogComponent } from './mood-item-log.component';
 
- export const routing = RouterModule.forRoot(appRoute)
+const appRoutes: Routes = [
+  { path: 'add', component: MoodItemFormComponent },
+  { path: 'log', component: MoodItemLogComponent },
+  { path: ':medium', component: MoodItemListComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'all' }
+];
+
+export const routing = RouterModule.forRoot(appRoutes);

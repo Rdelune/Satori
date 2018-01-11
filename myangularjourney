@@ -163,12 +163,6 @@ TUTORIALS (Continued 8 Jan)
         - likelability formulat that you can share across classes
 
 
-TODO
-    - Host binding, Host Listener, isFavorite - review! 
-    -no css added, check if it actually works on hover!
-    - MAKE SOME Pipes
-    - USE THE CSS directives
-    - ANGULAR FORM
 
 
     *
@@ -201,7 +195,39 @@ ngOnInit() {
   - providers
 
    these are things that come from my moduel tht i want to add to my inhjector
+    - "handle these for me" let know of these providers in provider property
+    - inject via the component constructor
+    - when it goes to get the things it checks to see is one there already
+    - something registered will be availaable to its children
+
 
 
 removed from configts.json     "typings/main",
     "typings/main.d.ts"
+
+
+
+TODO
+    - Host binding, Host Listener, isFavorite - review! 
+    -no css added, check if it actually works on hover!
+    - MAKE SOME Pipes
+    - USE THE CSS directives
+    - ANGULAR FORM
+    - minify my files using gulp
+    gulp-livereload
+    sass
+    javascript test using mocha
+    mongoose
+    prerender
+    eexpress for http requests
+    http -server4 for local seercer
+    vpn/proxy
+
+
+
+    ADDTOCV
+        - mocha
+        - angular
+        - linux
+        - bootstrap
+        

@@ -9,10 +9,10 @@ ul li {
   margin: 10px 0;
 }
 header, label {
-  color: #55656e;
+  color: #53ace4;
 }
 input, select {
-  background-color: #3d71b4;
+  background-color: #29394b;
   color: #c6c5c3;
   border-radius: 3px;
   border: none;
@@ -20,7 +20,7 @@ input, select {
   border-color: #53ace4;
   padding: 6px;
 }
-.ng-invalid:not(.ng-pristine):not(.required-invalid) {
+.ng-invalid:not(form):not(.ng-pristine):not(.required-invalid) {
   border: 1px solid #d93a3e;
 }
 input[required].ng-invalid {
@@ -36,6 +36,7 @@ input[required].ng-invalid:not(.required-invalid) {
 #year {
   width: 50px;
 }
+
 button[type=submit] {
   background-color: #45bf94;
   border: 0;

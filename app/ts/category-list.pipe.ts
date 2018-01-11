@@ -1,16 +1,16 @@
-/*import { Pipe } from "@angular/core/src/metadata/directives";
+import { Pipe } from '@angular/core';
 
 @Pipe({
-    name: 'categoryList',
-    pure: true
+  name: 'categoryList'
 })
-
 export class CategoryListPipe {
-
-    transform(mediaItems) {
-        console.log('pipe is working')
-        //add code here for pupe to do something with out data
-
-        return mediaItems
-    }
-}*/
+  transform(moodItems) {
+    var categories = [];
+    moodItems.forEach(moodItems => {
+      if (categories.indexOf(moodItems.category) <= -1) {
+        categories.push(moodItems.category);
+      }
+    });
+    return categories.join(', ');
+  }
+}

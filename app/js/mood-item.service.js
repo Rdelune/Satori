@@ -1,4 +1,4 @@
-System.register(['@angular/http', '@angular/core', 'rxjs/add/operator/map'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/map'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,18 +10,22 @@ System.register(['@angular/http', '@angular/core', 'rxjs/add/operator/map'], fun
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var http_1, core_1;
+    var core_1, http_1;
     var MoodItemService;
     return {
         setters:[
-            function (http_1_1) {
-                http_1 = http_1_1;
-            },
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
             function (_1) {}],
         execute: function() {
+            //get and set data from the data store
+            //in this case, display items
+            //can wrap up a formula here and use it wherever
+            //specific things that are none component specific
             MoodItemService = (function () {
                 function MoodItemService(http) {
                     this.http = http;
@@ -70,24 +74,20 @@ System.register(['@angular/http', '@angular/core', 'rxjs/add/operator/map'], fun
                         }];
                 }
                 MoodItemService.prototype.get = function (medium) {
-                    //let searchParams = new URLSearchParams()
-                    // searchParams.append('medium', medium)
-                    //return this.http.get('mediaitems')
-                    return; //GOES TO SUBSCRIBE FUNCTION
-                    // .map(response => {return response.json().mediaitems})
+                    var searchParams = new http_1.URLSearchParams();
+                    searchParams.append('medium', medium);
+                    return this.http.get('moodItems', { search: searchParams })
+                        .map(function (response) {
+                        return response.json().moodItems;
+                    });
                 };
                 MoodItemService.prototype.add = function (moodItem) {
-                    this.moodItemsServiceFile.push(moodItem);
-                    //return this.http.post('mediaItems', moodItem)
-                    //.map(response => {}) //handle repsonse data
+                    return this.http.post('moodItems', moodItem)
+                        .map(function (response) { });
                 };
                 MoodItemService.prototype.delete = function (moodItem) {
-                    var index = this.moodItemsServiceFile.indexOf(moodItem);
-                    if (index >= 0) {
-                        this.moodItemsServiceFile.splice(index, 1);
-                    }
-                    //  return this.http.delete(`mediaitems/${moodItem.id}`)
-                    //     .map(response => {});
+                    return this.http.delete("moodItems/" + moodItem.id)
+                        .map(function (response) { });
                 };
                 MoodItemService = __decorate([
                     core_1.Injectable(), 

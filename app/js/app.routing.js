@@ -1,8 +1,8 @@
-System.register(['@angular/router', './mood-item-form.component', './mood-item-list.component'], function(exports_1, context_1) {
+System.register(['@angular/router', './mood-item-form.component', './mood-item-list.component', './mood-item-log.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var router_1, mood_item_form_component_1, mood_item_list_component_1;
-    var appRoute, routing;
+    var router_1, mood_item_form_component_1, mood_item_list_component_1, mood_item_log_component_1;
+    var appRoutes, routing;
     return {
         setters:[
             function (router_1_1) {
@@ -13,16 +13,18 @@ System.register(['@angular/router', './mood-item-form.component', './mood-item-l
             },
             function (mood_item_list_component_1_1) {
                 mood_item_list_component_1 = mood_item_list_component_1_1;
+            },
+            function (mood_item_log_component_1_1) {
+                mood_item_log_component_1 = mood_item_log_component_1_1;
             }],
         execute: function() {
-            appRoute = [
+            appRoutes = [
                 { path: 'add', component: mood_item_form_component_1.MoodItemFormComponent },
-                { path: 'Make Entry', component: mood_item_form_component_1.MoodItemFormComponent },
-                { path: 'Log', component: mood_item_list_component_1.MoodItemListComponent },
-                { path: ':timeOfDay' },
-                { path: '', pathMatch: '', redirectTo: 'all' }
+                { path: 'log', component: mood_item_log_component_1.MoodItemLogComponent },
+                { path: ':medium', component: mood_item_list_component_1.MoodItemListComponent },
+                { path: '', pathMatch: 'full', redirectTo: 'all' }
             ];
-            exports_1("routing", routing = router_1.RouterModule.forRoot(appRoute));
+            exports_1("routing", routing = router_1.RouterModule.forRoot(appRoutes));
         }
     }
 });

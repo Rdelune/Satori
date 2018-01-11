@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './app.component', './mood-item.component', './mood-item-form.component', './mood-item.service', './mood-item-list.component', './providers', './mock-xhr-backend', './app.routing'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './app.component', './mood-item.component', './mood-item-list.component', './favorite.directive', './category-list.pipe', './mood-item-log.component', './mood-item-form.component', './mood-item.service', './providers', './mock-xhr-backend', './app.routing', '@angular/common'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, http_1, app_component_1, mood_item_component_1, mood_item_form_component_1, mood_item_service_1, mood_item_list_component_1, providers_1, mock_xhr_backend_1, app_routing_1;
+    var core_1, platform_browser_1, forms_1, http_1, app_component_1, mood_item_component_1, mood_item_list_component_1, favorite_directive_1, category_list_pipe_1, mood_item_log_component_1, mood_item_form_component_1, mood_item_service_1, providers_1, mock_xhr_backend_1, app_routing_1, common_1;
     var AppModule;
     return {
         setters:[
@@ -32,14 +32,23 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             function (mood_item_component_1_1) {
                 mood_item_component_1 = mood_item_component_1_1;
             },
+            function (mood_item_list_component_1_1) {
+                mood_item_list_component_1 = mood_item_list_component_1_1;
+            },
+            function (favorite_directive_1_1) {
+                favorite_directive_1 = favorite_directive_1_1;
+            },
+            function (category_list_pipe_1_1) {
+                category_list_pipe_1 = category_list_pipe_1_1;
+            },
+            function (mood_item_log_component_1_1) {
+                mood_item_log_component_1 = mood_item_log_component_1_1;
+            },
             function (mood_item_form_component_1_1) {
                 mood_item_form_component_1 = mood_item_form_component_1_1;
             },
             function (mood_item_service_1_1) {
                 mood_item_service_1 = mood_item_service_1_1;
-            },
-            function (mood_item_list_component_1_1) {
-                mood_item_list_component_1 = mood_item_list_component_1_1;
             },
             function (providers_1_1) {
                 providers_1 = providers_1_1;
@@ -49,9 +58,11 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             },
             function (app_routing_1_1) {
                 app_routing_1 = app_routing_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
             }],
         execute: function() {
-            //import { CategoryListPipe } from './category-list.pipe'
             AppModule = (function () {
                 function AppModule() {
                 }
@@ -65,18 +76,23 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                         ],
                         declarations: [
                             app_component_1.AppComponent,
-                            mood_item_list_component_1.MoodItemListComponent,
                             mood_item_component_1.MoodItemComponent,
-                            mood_item_form_component_1.MoodItemFormComponent
+                            mood_item_list_component_1.MoodItemListComponent,
+                            favorite_directive_1.FavoriteDirective,
+                            category_list_pipe_1.CategoryListPipe,
+                            mood_item_form_component_1.MoodItemFormComponent,
+                            mood_item_log_component_1.MoodItemLogComponent
                         ],
                         providers: [
                             mood_item_service_1.MoodItemService,
                             { provide: providers_1.lookupListToken, useValue: providers_1.lookupLists },
-                            { provide: http_1.XHRBackend, useValue: mock_xhr_backend_1.MockXHRBackend },
+                            { provide: http_1.XHRBackend, useClass: mock_xhr_backend_1.MockXHRBackend },
+                            //Enter app at this point - home
+                            { provide: common_1.APP_BASE_HREF, useValue: '/' }
                         ],
                         bootstrap: [
-                            app_component_1.AppComponent,
-                        ] //lets angular know the entry point for the bootstrap process    
+                            app_component_1.AppComponent
+                        ]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppModule);

@@ -20,84 +20,10 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.events = [];
-                    this.firstMooditem = {
-                        date: 10,
-                        generalMood: 50,
-                        apettite: 50,
-                        sleep: [{}],
-                        pleasureCapacity: 50,
-                        energyLevel: 50,
-                        motivation: 50,
-                        selfWorth: 50,
-                        concentration: 50,
-                        extStressors: [{}],
-                        additionalNotes: 0
-                    };
-                    this.firstPlaylistItem = {
-                        date: 10,
-                        generalMood: 50,
-                        apettite: 50,
-                        sleep: [{}],
-                        pleasureCapacity: 50,
-                        energyLevel: 50,
-                        motivation: 50,
-                        selfWorth: 50,
-                        concentration: 50,
-                        extStressors: [{}],
-                        additionalNotes: 0
-                    };
-                    this.moodItems = [{
-                            date: 10,
-                            generalMood: 50,
-                            apettite: 50,
-                            sleep: [{}],
-                            pleasureCapacity: 50,
-                            energyLevel: 50,
-                            motivation: 50,
-                            selfWorth: 50,
-                            concentration: 50,
-                            extStressors: [{}],
-                            additionalNotes: 0
-                        }, {
-                            date: 10,
-                            generalMood: 50,
-                            apettite: 50,
-                            sleep: [{}],
-                            pleasureCapacity: 50,
-                            energyLevel: 50,
-                            motivation: 50,
-                            selfWorth: 50,
-                            concentration: 50,
-                            extStressors: [{}],
-                            additionalNotes: 0
-                        },
-                        {
-                            date: 10,
-                            generalMood: 50,
-                            apettite: 50,
-                            sleep: [{}],
-                            pleasureCapacity: 50,
-                            energyLevel: 50,
-                            motivation: 50,
-                            selfWorth: 50,
-                            concentration: 50,
-                            extStressors: [{}],
-                            additionalNotes: 0
-                        }];
-                    [
-                        this.firstPlaylistItem
-                    ];
                 }
-                AppComponent.prototype.onMoodItemDelete = function (moodItem) {
-                };
-                ;
-                AppComponent.prototype.clickedButton = function () {
-                    console.log('clicked');
-                };
                 AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
+                        selector: 'mw-app',
                         templateUrl: 'app/ts/app.component.html',
                         styleUrls: ['app/ts/app.component.css']
                     }), 
